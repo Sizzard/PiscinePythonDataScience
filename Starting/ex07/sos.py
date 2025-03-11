@@ -44,16 +44,27 @@ def get_morse_code() -> dict:
     }
     return morse
 
+
+def is_alnumspace(string: str) -> bool:
+    """function to see if string contains alpha numeric or space"""
+    morse = get_morse_code()
+    for char in string:
+        if char not in morse:
+            return False
+    return True
+
+
 def main():
     try:
         if len(sys.argv) != 2:
             raise AssertionError("AssertionError: the arguments are bad")
-        string = sys.argv[1]
-        if not string.isalnum():
+        string = sys.argv[1].upper()
+        if not is_alnumspace(string):
             raise AssertionError("AssertionError: the arguments are bad")
         morse = get_morse_code()
         for char in string:
             print(f"{morse[char.upper()]}", end="")
+        print(end="\b")
     except Exception as e:
         print(e)
 
