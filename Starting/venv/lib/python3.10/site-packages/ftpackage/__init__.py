@@ -1,1 +1,1 @@
-from .core import ft_count_lines
+# from .core import ft_count_lines
