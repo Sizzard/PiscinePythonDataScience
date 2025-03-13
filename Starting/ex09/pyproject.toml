@@ -1,15 +1,13 @@
 [project]
-name = "ft_package_42student"
-version = "0.0.1"
+name = "ftpackage"
+version = "0.1"
 authors = [
   { name="oui oui", email="non@gmail.com" },
 ]
-description = "package bidon pour 42"
-readme = "README.md"
-requires-python = ">=3.8"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "Operating System :: OS Independent",
-]
-license = "MIT"
-license-files = ["LICEN[CS]E*"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["ftpackage*"]
